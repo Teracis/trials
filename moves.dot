@@ -1,0 +1,6 @@
+digraph moves {
+  "trackstand" -> "pedal kick","rock back","endo"
+  "pedal kick" -> "back hop"
+  "rock back" -> "back hop"
+  "endo" -> "front pivot","front hop"
+}

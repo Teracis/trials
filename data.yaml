@@ -1,0 +1,31 @@
+# - name:
+#   id:
+#   description:
+#   prerequisite:
+#   like:
+#   use:
+
+- name: balance
+  id: 0
+  description: balancing
+  prerequisite: none
+  like:
+  use: staying on the bike
+- name: trackstand
+  id: 1
+  description: balancing on the bike in a stationary position
+  prerequisite: balance
+  like:
+  use: staying on the bike in a stationary position
+- name: pedal kick
+  id: 2
+  description: kicking the pedal to lift the front wheel
+  prerequisite: balance
+  like:
+  use: lifting the front wheel,initiation of moves,rolling forward
+- name: back hop
+  id: 3
+  description: hopping on the back wheel
+  prerequisite: pedal kick, rock back
+  like:
+  use: positioning, balancing
