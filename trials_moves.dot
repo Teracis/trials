@@ -1,0 +1,49 @@
+digraph trials_moves {
+  splines="true";
+
+  /* Entities */
+  # name [id=number???,label="text_to_display",shape="shape_to_display"]
+  trackstand    [label="trackstand", shape=""]
+  pedal_kick    [label="pedal kick", shape=""]
+  rock_back     [id=0,label="rock back", shape=""]
+  back_hop      [label="back hop", shape=""]
+  back_pivot    [label="back pivot",shape=""]
+  endo          [label="endo", shape=""]
+  front_pivot   [label="front pivot", shape=""]
+  front_hop     [label="front hop", shape=""]
+  drop          [label="drop",shape=""]
+  pivot_drop    [label="pivot drop",shape=""]
+  drop_to_back  [label="drop to back",shape=""]
+  wheelie       [label="wheelie", shape=""]
+  manual        [label="manual", shape=""]
+  pedal_gap     [label="pedal gap", shape=""] 
+  wheelie_gap   [label="wheelie gap", shape=""]
+  bunnyhop      [label="bunnyhop", shape=""]
+  manual_hop    [label="manual hop", shape=""]
+  pedal_up      [label="pedal up", shape=""]
+  up_to_back    [label="up to back", shape=""]
+  up_to_front   [label="up to front", shape=""]
+  hook          [label="hook", shape=""]
+  wheel_swap    [label="wheel swap", shape=""]
+
+  /* Relationships */
+  # source -> target[label="edge_label"]
+  trackstand    -> pedal_kick,rock_back,endo,back_pivot
+  pedal_kick    -> back_hop,drop_to_back,wheelie,pedal_gap,pedal_up
+  rock_back     -> back_hop,manual
+  back_hop      -> pedal_gap
+  wheelie       -> wheelie_gap
+  manual        -> manual_hop
+  endo          -> front_pivot,front_hop,up_to_front,wheel_swap
+  front_pivot   -> pivot_drop
+  drop          -> pivot_drop,drop_to_back
+  wheel_swap    -> up_to_front
+  pedal_up,bunnyhop,pedal_gap,wheelie_gap      -> up_to_back,up_to_front,hook
+  
+
+
+  /* Ranks */
+  # { rank=same; entity1;entity2;entity3; };
+  { rank=same; pedal_up;bunnyhop; };
+  { rank=same; manual;wheelie; };
+}
