@@ -5,7 +5,8 @@ digraph trials_moves {
   # name [id=number???,label="text_to_display",shape="shape_to_display"]
   trackstand    [label="trackstand", shape=""]
   pedal_kick    [label="pedal kick", shape=""]
-  rock_back     [id=0,label="rock back", shape=""]
+  unweight      [label="unweight", shape=""]
+  rock_back     [label="rock back", shape=""]
   back_hop      [label="back hop", shape=""]
   back_pivot    [label="back pivot",shape=""]
   endo          [label="endo", shape=""]
@@ -29,8 +30,9 @@ digraph trials_moves {
   /* Relationships */
   # source -> target[label="edge_label"]
   trackstand    -> pedal_kick,rock_back,endo,back_pivot
+  unweight      -> pedal_kick,rock_back,endo,back_pivot,wheelie,manual
   pedal_kick    -> back_hop,drop_to_back,wheelie,pedal_gap,pedal_up
-  rock_back     -> back_hop,manual
+  rock_back     -> back_hop
   back_hop      -> pedal_gap
   wheelie       -> wheelie_gap
   manual        -> manual_hop
